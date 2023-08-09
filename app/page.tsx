@@ -1,4 +1,3 @@
-import prisma from "@/db";
 import Post from "@/components/post";
 import FormMsg from "@/components/formMsg";
 import {
@@ -8,11 +7,8 @@ import {
   handleNoHate,
   editPost,
   deletePost,
+  getPosts,
 } from "@/utils/utils";
-
-async function getPosts() {
-  return await prisma.posts.findMany();
-}
 
 export default async function Home() {
   const posts = await getPosts();

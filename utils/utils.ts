@@ -1,6 +1,9 @@
 "use server";
 import prisma from "@/db";
 
+async function getPosts() {
+    return await prisma.posts.findMany();
+}
 
 async function addPost(title: string, content: string) {
     await prisma.posts.create({ data: { title, content } })
@@ -27,4 +30,4 @@ async function deletePost(id: string) {
     await prisma.posts.delete({ where: { id } })
 }
 
-export { addPost, handleLike, handleNoLike, handleDisLike, handleNoHate, editPost, deletePost }
+export { getPosts, addPost, handleLike, handleNoLike, handleDisLike, handleNoHate, editPost, deletePost }
