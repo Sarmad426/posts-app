@@ -19,7 +19,7 @@ const Edit: React.FC<Props> = ({
   const router = useRouter();
   const [editTitle, setEditTitle] = useState(title);
   const [editContent, setEditContent] = useState(content);
-  const handleSubmit = (formEvent: React.FormEvent) => {
+  const handleSubmit = () => {
     closeModal(id);
   };
   const editPostClient = (id: string, title: string, content: string): void => {
@@ -51,7 +51,7 @@ const Edit: React.FC<Props> = ({
         onSubmit={handleSubmit}
         action={() => editPostClient(id, editTitle, editContent)}
         className="mt-5"
-        method="post"
+        method="dialog"
       >
         <label htmlFor="edit-title" className="block">
           Title
@@ -110,7 +110,10 @@ const Edit: React.FC<Props> = ({
           rows={10}
           onChange={(e) => setEditContent(e.target.value)}
         ></textarea>
-        <button className="bg-white text-gray-800 rounded-md py-2 px-5 text-lg text-center hover:bg-gray-200 cursor-pointer transition-all duration-700">
+        <button
+          type="submit"
+          className="bg-white text-gray-800 rounded-md py-2 px-5 text-lg text-center hover:bg-gray-200 cursor-pointer transition-all duration-700"
+        >
           Edit
         </button>
       </form>
