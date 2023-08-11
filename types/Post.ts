@@ -12,7 +12,6 @@ interface PostProps {
     handleNoHate: (id: string) => void,
     editPost: (id: string, title: string, content: string) => void,
     deletePost: (id: string) => void,
-    closeDeleteModal: () => void;
 }
 
 export default PostProps;
