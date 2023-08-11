@@ -79,7 +79,9 @@ const Post: React.FC<PostProps> = ({
   return (
     <div
       key={id}
-      className="w-[30%] 
+      className="
+      w-[30%] 
+      h-[10rem]
           shadow-sm 
             shadow-gray-200
           rounded-md
@@ -132,6 +134,7 @@ const Post: React.FC<PostProps> = ({
         </div>
       )}
       <p className="text-gray-600">{content}</p>
+
       <div className="flex justify-end gap-6 bg-gray-100 w-fit px-3 py-1 absolute right-1 bottom-[-40px] rounded-md">
         {!liked ? (
           <Image
@@ -168,17 +171,18 @@ const Post: React.FC<PostProps> = ({
           />
         )}
       </div>
+
+      <DeleteModal
+        id={id}
+        closeDeleteModal={closeDeleteModal}
+        deletePostClientRefresh={deletePostClientRefresh}
+      />
       <Edit
         id={id}
         title={title}
         content={content}
         closeModal={closeModal}
         editPost={editPost}
-      />
-      <DeleteModal
-        id={id}
-        closeDeleteModal={closeDeleteModal}
-        deletePostClientRefresh={deletePostClientRefresh}
       />
     </div>
   );
