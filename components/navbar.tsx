@@ -1,8 +1,13 @@
 "use client";
-
-import Link from "next/link";
-
+import { useState } from "react";
 const Navbar = () => {
+  const newPost = () => {
+    const newPostModal = document.getElementById(`new-post`);
+    if (newPostModal) {
+      newPostModal.show();
+    }
+  };
+  const [open, setOpen] = useState<boolean>(false);
   return (
     <header
       className="
@@ -13,21 +18,26 @@ const Navbar = () => {
       m-6
       p-5
       text-2xl
-      font-semibold
       "
     >
-      <Link
-        href="/"
-        className="py-2 px-4 rounded-md bg-gray-700 outline-white border-none"
+      <button
+        className="
+       font-bold
+       pb-3 
+       text-center 
+       px-4 rounded-full
+        bg-white border-none cursor-pointer text-5xl"
+        onClick={newPost}
+        onMouseOver={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
       >
-        Posts
-      </Link>
-      <Link
-        href="/new"
-        className="py-2 px-4 rounded-md bg-gray-700 outline-white border-none"
-      >
-        Add Posts
-      </Link>
+        {open && (
+          <div className="transition duration-700 bg-white font-normal text-black px-3 py-2 text-sm rounded-sm absolute top-4 right-20 opacity-75">
+            Add New Post
+          </div>
+        )}
+        +
+      </button>
     </header>
   );
 };
