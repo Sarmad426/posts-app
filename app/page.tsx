@@ -8,7 +8,9 @@ import {
   editPost,
   deletePost,
   getPosts,
+  addPost,
 } from "@/utils/utils";
+import NewPost from "@/components/newpost";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -28,6 +30,7 @@ export default async function Home() {
           />
         ))}
       </div>
+      <NewPost newPost={addPost} />
       <FormMsg />
     </main>
   );
