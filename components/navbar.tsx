@@ -4,6 +4,7 @@ const Navbar = () => {
   const newPost = () => {
     const newPostModal = document.getElementById(`new-post`);
     if (newPostModal) {
+      // @ts-ignore
       newPostModal.show();
     }
   };
@@ -26,7 +27,7 @@ const Navbar = () => {
        pb-3 
        text-center 
        px-4 rounded-full
-        bg-white border-none cursor-pointer text-5xl"
+        bg-white text-black border-none cursor-pointer text-5xl"
         onClick={newPost}
         onMouseOver={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
