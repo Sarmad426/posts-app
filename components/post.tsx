@@ -46,18 +46,21 @@ const Post: React.FC<PostProps> = ({
   const editDialog = (id: string) => {
     const editModal = document.getElementById(`${id}`);
     if (editModal) {
+      //@ts-ignore
       editModal.showModal();
     }
   };
   const closeModal = (id: string) => {
     const editModal = document.getElementById(`${id}`);
     if (editModal) {
+      //@ts-ignore
       editModal.close();
     }
   };
   const deletePostClient = (id: string): void => {
     const deleteModal = document.getElementById(`delete-${id}`);
     if (deleteModal) {
+      //@ts-ignore
       deleteModal.showModal();
     }
     router.refresh();
@@ -66,6 +69,7 @@ const Post: React.FC<PostProps> = ({
     deletePost(id);
     const deleteModal = document.getElementById(`delete-${id}`);
     if (deleteModal) {
+      //@ts-ignore
       deleteModal.close();
     }
     router.refresh();
@@ -73,6 +77,7 @@ const Post: React.FC<PostProps> = ({
   const closeDeleteModal = () => {
     const deleteModal = document.getElementById(`delete-${id}`);
     if (deleteModal) {
+      //@ts-ignore
       deleteModal.close();
     }
   };
