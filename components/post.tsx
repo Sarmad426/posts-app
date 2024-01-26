@@ -101,7 +101,7 @@ const Post: React.FC<PostProps> = ({
     >
       <h3 className="text-xl font-semibold text-center mb-6">{title}</h3>
       <button
-        onMouseOver={() => setOpenInfo(!openInfo)}
+        onClick={() => setOpenInfo(!openInfo)}
         className="text-3xl font-extrabold absolute right-5 top-0 p-2"
       >
         ...
@@ -148,6 +148,7 @@ const Post: React.FC<PostProps> = ({
             width={30}
             height={25}
             onClick={() => handleLikeClient(id)}
+            className="cursor-pointer"
           />
         ) : (
           <Image
@@ -156,6 +157,7 @@ const Post: React.FC<PostProps> = ({
             width={30}
             height={25}
             onClick={() => handleNoLikeClient(id)}
+            className="cursor-pointer"
           />
         )}
         {!hated ? (
@@ -165,6 +167,7 @@ const Post: React.FC<PostProps> = ({
             width={30}
             height={25}
             onClick={() => handleDisLikeClient(id)}
+            className="cursor-pointer"
           />
         ) : (
           <Image
@@ -173,6 +176,7 @@ const Post: React.FC<PostProps> = ({
             width={30}
             height={25}
             onClick={() => handleNoHateClient(id)}
+            className="cursor-pointer"
           />
         )}
       </div>
