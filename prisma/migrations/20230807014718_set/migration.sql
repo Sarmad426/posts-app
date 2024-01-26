@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE `post` MODIFY `liked` BOOLEAN NOT NULL DEFAULT false,
-    MODIFY `hated` BOOLEAN NOT NULL DEFAULT false;
