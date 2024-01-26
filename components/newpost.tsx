@@ -11,6 +11,7 @@ const NewPost: React.FC<Props> = ({ newPost }) => {
   const closeModal = () => {
     const closeNewPostModal = document.getElementById("new-post");
     if (closeNewPostModal) {
+      // @ts-ignore
       closeNewPostModal.close();
     }
   };
